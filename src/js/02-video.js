@@ -1,5 +1,5 @@
 import Player from '@vimeo/player';
-import * as storage from './storage.js';
+import { save, load } from './storage.js';
 let throttle = require('lodash.throttle');
 
 const iframe = document.querySelector('iframe');
@@ -16,12 +16,14 @@ player.getVideoTitle().then(function(title) {
 const handleTimeUpdate = throttle((event) => {
     const currentTime = event.seconds;
     console.log(event.seconds);
-    storage.save('playerCurrentTime', currentTime);
+    save('playerCurrentTime', currentTime);
 }, 1000);
 
 player.on('timeupdate', handleTimeUpdate);
 
-const currentTime = storage.load('playerCurrentTime');
+const currentTime = load('playerCurrentTime');
 if (currentTime !== undefined) {
     player.setCurrentTime(currentTime); 
 }
+
+
