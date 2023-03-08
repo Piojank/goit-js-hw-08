@@ -23,3 +23,4 @@ export const clear = key => {
         console.error("Clear state error: ", error.message);
     }
 };
+
