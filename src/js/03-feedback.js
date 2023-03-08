@@ -10,7 +10,7 @@ const LOCALSTORAGE_KEY = "feedback-form-state";
 
 const loadInput = () => {
     const state = load(LOCALSTORAGE_KEY);
-    if (state !== '') {
+    if (state !== "") {
         email.value = load("email");
         message.value = load("message");
     }
