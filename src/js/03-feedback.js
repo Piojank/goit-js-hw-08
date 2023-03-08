@@ -36,7 +36,7 @@ const saveInput = (event) => {
         email.value = '';
         message.value = '';
     } else {
-    alert('Please type in correct email address: example@go.com');
+    alert('Please type in correct email address: example@gmail.com');
     }
 };
 
