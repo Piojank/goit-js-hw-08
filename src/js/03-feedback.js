@@ -9,8 +9,8 @@ const submitBtn = qs('button[type="submit"]');
 const LOCALSTORAGE_KEY = "feedback-form-state";
 
 const loadInput = () => {
-    const state = load(LOCALSTORAGE_KEY);
-    if (state !== "") {
+    const dataForm = load(LOCALSTORAGE_KEY);
+    if (dataForm) {
         email.value = load("email");
         message.value = load("message");
     }
@@ -32,7 +32,7 @@ const saveInput = (event) => {
         save(LOCALSTORAGE_KEY, state);
         console.log(state);
 
-        clear();
+        clear(LOCALSTORAGE_KEY);
         email.value = '';
         message.value = '';
     } else {
